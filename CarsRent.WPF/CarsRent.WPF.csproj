@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarsRent.BL\CarsRent.BL.csproj">
+      <Project>{77e38c5f-7bb0-4630-b6ce-9630ef1ac88b}</Project>
+      <Name>CarsRent.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

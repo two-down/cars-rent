@@ -1,0 +1,7 @@
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\CarsRent.BL.dll
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\CarsRent.BL.pdb
+D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.AssemblyReference.cache
+D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.CoreCompileInputs.cache
+D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.dll
+D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.pdb
+D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.ResolveComReference.cache
