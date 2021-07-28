@@ -16,3 +16,8 @@ D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.csproj.CoreCompileI
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.csproj.CopyComplete
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.exe
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.pdb
+D:\_projects\C#\CarsRent\CarsRent.WPF\bin\Debug\CarsRent.BL.dll.config
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\Settings.g.cs
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\Settings.baml
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\SettingsCategory.g.cs
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\SettingsCategory.baml

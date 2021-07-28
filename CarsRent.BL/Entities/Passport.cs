@@ -36,7 +36,7 @@ namespace CarsRent.BL.Entities
         public override string ToString()
         {
             return $"{Surname} {Name} {Patronymic} паспорт: серия {Series} № {Number}, выданный" +
-                $" {IssuingOrganization} {IssueDate}, проживающий(ая) по адресу: {RegistrationPlace}";
+                $" {IssuingOrganization} {IssueDate:dd.MM.yyyy}, проживающий(ая) по адресу: {RegistrationPlace}";
         }
     }
 }

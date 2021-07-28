@@ -5,3 +5,9 @@ D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.CoreCompileInp
 D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.dll
 D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.pdb
 D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.ResolveComReference.cache
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\CarsRent.BL.dll.config
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\EntityFramework.dll
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\EntityFramework.SqlServer.dll
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\EntityFramework.xml
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\EntityFramework.SqlServer.xml
+D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.CopyComplete

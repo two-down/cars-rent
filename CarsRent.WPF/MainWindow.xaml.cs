@@ -1,5 +1,6 @@
 ﻿using CarsRent.BL.Entities;
 using CarsRent.BL.Word;
+using CarsRent.WPF.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,11 @@ namespace CarsRent.WPF
             var renter = new Renter(renterPassport);
 
             CreateDocument.Create(landlord, renter, @"D:\newdoc.docx");
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new Settings();
         }
     }
 }

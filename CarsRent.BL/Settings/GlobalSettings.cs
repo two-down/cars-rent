@@ -3,8 +3,17 @@
 namespace CarsRent.BL.Settings
 {
     [Serializable]
-    public static class GlobalSettings
+    public class GlobalSettings
     {
-        public static string SamplePath = @"D:\doc.docx";
+        public string SampleActPath { get; set; }
+        public string SampleContractPath { get; set; }
+        public string SampleNotificationPath { get; set; }
+
+        public GlobalSettings() { }
+
+        public override string ToString()
+        {
+            return "global_settings";
+        }
     }
 }

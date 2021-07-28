@@ -7,7 +7,7 @@ namespace CarsRent.BL.Word
 {
     public class Document
     {
-        private FileInfo _documentInfo;
+        private readonly FileInfo _documentInfo;
 
         public Document(FileMode mode, string path)
         {
@@ -26,9 +26,6 @@ namespace CarsRent.BL.Word
 
             foreach (var word in replaceWords)
             {
-                app.Selection.Find.ClearFormatting();
-                app.Selection.Find.Replacement.ClearFormatting();
-
                 app.Selection.Find.Execute(FindText: word.Key,
                     MatchCase: false,
                     MatchWholeWord: false,

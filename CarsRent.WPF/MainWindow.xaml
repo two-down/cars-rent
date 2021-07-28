@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Click="Button_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnCreate" Grid.Row="0" Grid.Column="0" Content="Ввести новые данные"/>
+        <Button x:Name="btnOpen" Grid.Row="0" Grid.Column="1" Content="Выбрать из старых данных"/>
+        <Button x:Name="btnCarsList" Grid.Row="0" Grid.Column="2" Content="Список машин"/>
+        <Button x:Name="btnUsersList" Grid.Row="0" Grid.Column="3" Content="Список арендаторов"/>
+        <Button x:Name="btnSettings" Grid.Row="0" Grid.Column="4" Content="Настройки" Click="btnSettings_Click"/>
+
+        <Frame x:Name="mainFrame" Grid.Row="1" Grid.ColumnSpan="5"/>
     </Grid>
 </Window>
