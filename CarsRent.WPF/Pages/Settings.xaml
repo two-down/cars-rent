@@ -14,7 +14,7 @@
             <ColumnDefinition Width="70*"/>
         </Grid.ColumnDefinitions>
 
-        <TreeView Grid.Column="0" x:Name="treeViewSettingsCategory" SelectedItemChanged="treeViewSettingsCategory_SelectedItemChanged"/>
+        <TreeView FontSize="20" Grid.Column="0" x:Name="treeViewSettingsCategory" SelectedItemChanged="treeViewSettingsCategory_SelectedItemChanged"/>
         <Frame Grid.Column="1" x:Name="settingsFrame"/>
     </Grid>
 </Page>

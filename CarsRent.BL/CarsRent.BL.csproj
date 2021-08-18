@@ -60,7 +60,8 @@
     <Compile Include="Entities\Renter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\GlobalSettings.cs" />
-    <Compile Include="Settings\SettingsView.cs" />
+    <Compile Include="Settings\InputsToSettings.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
     <Compile Include="Settings\TreeViewConverter.cs" />
     <Compile Include="Validators\PassportValidator.cs" />
     <Compile Include="Word\CreateDocument.cs" />

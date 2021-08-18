@@ -19,12 +19,15 @@ namespace CarsRent.WPF.UI_Utilities
             _inputsPanel = inputsPanel;
         }
 
-        public void AddTextBox(string labelText)
+        public void AddTextBox(string labelText, string textBoxText)
         {
             var label = new Label();
             label.Content = labelText;
+            label.FontSize = 18;
 
             var textbox = new TextBox();
+            textbox.FontSize = 24;
+            textbox.Text = textBoxText;
 
             _labelsPanel.Children.Add(label);
             _inputsPanel.Children.Add(textbox);
