@@ -18,7 +18,7 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel x:Name="spLabels" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+        <StackPanel x:Name="spLabels" Grid.Column="0" Grid.Row="0"/>
         <StackPanel x:Name="spInputs" Grid.Column="1" Grid.Row="0"/>
         <Button x:Name="btnSaveChanges" Content="Сохранить" Grid.Column="1" Grid.Row="1" Click="btnSaveChanges_Click"/>
     </Grid>

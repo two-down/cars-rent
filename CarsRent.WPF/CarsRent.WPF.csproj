@@ -55,7 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UI Utilities\SettingsConstructor.cs" />
+    <Compile Include="Pages\RenterActions.xaml.cs">
+      <DependentUpon>RenterActions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Renters.xaml.cs">
+      <DependentUpon>Renters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI Utilities\InputsConstructor.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,6 +74,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\RenterActions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Renters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

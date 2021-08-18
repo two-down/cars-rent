@@ -21,3 +21,7 @@ D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\Settings.g.cs
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\Settings.baml
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\SettingsCategory.g.cs
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\SettingsCategory.baml
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\RenterActions.g.cs
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\Renters.g.cs
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\RenterActions.baml
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\Renters.baml

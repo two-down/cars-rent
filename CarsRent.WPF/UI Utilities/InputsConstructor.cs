@@ -3,12 +3,12 @@ using System.Windows.Controls;
 
 namespace CarsRent.WPF.UI_Utilities
 {
-    public class SettingsConstructor
+    public class InputsConstructor
     {
         private readonly StackPanel _labelsPanel;
         private readonly StackPanel _inputsPanel;
 
-        public SettingsConstructor(ref StackPanel labelsPanel, ref StackPanel inputsPanel)
+        public InputsConstructor(ref StackPanel labelsPanel, ref StackPanel inputsPanel)
         {
             if (labelsPanel == null)
                 throw new ArgumentNullException(nameof(labelsPanel));

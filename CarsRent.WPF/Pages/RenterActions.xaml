@@ -1,0 +1,58 @@
+﻿<Page x:Class="CarsRent.WPF.Pages.RenterActions"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CarsRent.WPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RenterActions">
+
+    <Page.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblSurname" Content="Фамилия" Grid.Row="0" Grid.Column="0"/>
+        <Label x:Name="lblName" Content="Имя" Grid.Row="1" Grid.Column="0"/>
+        <Label x:Name="lblPatronymic" Content="Отчество" Grid.Row="2" Grid.Column="0"/>
+        <Label x:Name="lblSeries" Content="Паспорт серия" Grid.Row="3" Grid.Column="0"/>
+        <Label x:Name="lblNumber" Content="Паспорт номер" Grid.Row="4" Grid.Column="0"/>
+        <Label x:Name="lblIssueDate" Content="Дата выдачи" Grid.Row="5" Grid.Column="0"/>
+        <Label x:Name="lblIssuingOrganization" Content="Кем выдан" Grid.Row="6" Grid.Column="0"/>
+        <Label x:Name="lblRegistrationPlace" Content="Место регистрации" Grid.Row="7" Grid.Column="0"/>
+
+        <TextBox x:Name="tbxSurname" Grid.Row="0" Grid.Column="1"/>
+        <TextBox x:Name="tbxName" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="tbxPatronymic" Grid.Row="2" Grid.Column="1"/>
+        <TextBox x:Name="tbxSeries" Grid.Row="3" Grid.Column="1"/>
+        <TextBox x:Name="tbxNumber" Grid.Row="4" Grid.Column="1"/>
+        <TextBox x:Name="tbxIssueDate" Grid.Row="5" Grid.Column="1"/>
+        <TextBox x:Name="tbxIssuingOrganization" Grid.Row="6" Grid.Column="1"/>
+        <TextBox x:Name="tbxRegistrationPlace" Grid.Row="7" Grid.Column="1"/>
+
+        <Button x:Name="btnSaveChanges" Content="Сохранить" Grid.Column="1" Grid.Row="8" Click="btnSaveChanges_Click" Margin="50, 25, 50, 25"/>
+    </Grid>
+</Page>

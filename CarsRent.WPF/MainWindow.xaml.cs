@@ -28,20 +28,14 @@ namespace CarsRent.WPF
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var landLordPassport = new Passport("Имя", "Фамилия", "Отчество", "1234", "567890", DateTime.Now, "ОФМС", "Новосибирск");
-            var renterPassport = new Passport("Имя1", "Фамилия1", "Отчество1", "1234", "567890", DateTime.Now, "ОФМС1", "Новосибирск1");
-
-            var landlord = new LandLord(landLordPassport);
-            var renter = new Renter(renterPassport);
-
-            CreateDocument.Create(landlord, renter, @"D:\newdoc.docx");
-        }
-
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
             mainFrame.Content = new Settings();
+        }
+
+        private void btnUsersList_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Content = new Renters();
         }
     }
 }

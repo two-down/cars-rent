@@ -9,14 +9,14 @@ namespace CarsRent.WPF.Pages
 {
     public partial class SettingsCategory : Page
     {
-        private readonly SettingsConstructor _constructor;
+        private readonly InputsConstructor _constructor;
         private readonly SettingsTypes _settingsType;
 
         public SettingsCategory(SettingsTypes settingsType)
         {
             InitializeComponent();
 
-            _constructor = new SettingsConstructor(ref spLabels, ref spInputs);
+            _constructor = new InputsConstructor(ref spLabels, ref spInputs);
             _settingsType = settingsType;
 
             CreateSettingsView();
