@@ -1,4 +1,6 @@
-﻿using CarsRent.BL.Entities;
+﻿using CarsRent.BL;
+using CarsRent.BL.BDRequests;
+using CarsRent.BL.Entities;
 using CarsRent.BL.Word;
 using CarsRent.WPF.Pages;
 using System;
@@ -26,6 +28,9 @@ namespace CarsRent.WPF
         public MainWindow()
         {
             InitializeComponent();
+
+            // TODO: По другому инициализировать базу данных.
+            Query<Car>.SelectAll();
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)

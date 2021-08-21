@@ -11,6 +11,8 @@ namespace CarsRent.BL.Entities
         public DateTime ConclusionDate { get; set; }
         public DateTime EndDate { get; set; }
 
+        public Contract() { }
+
         public Contract(LandLord landLord, Renter renter, Car car, DateTime conclusionDate, DateTime endDate)
         {
             if (landLord == null)

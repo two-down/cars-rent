@@ -25,3 +25,9 @@ D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\RenterActions.g.cs
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\Renters.g.cs
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\RenterActions.baml
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\Renters.baml
+D:\_projects\C#\CarsRent\CarsRent.WPF\bin\Debug\EntityFramework.dll
+D:\_projects\C#\CarsRent\CarsRent.WPF\bin\Debug\EntityFramework.xml
+D:\_projects\C#\CarsRent\CarsRent.WPF\bin\Debug\EntityFramework.SqlServer.dll
+D:\_projects\C#\CarsRent\CarsRent.WPF\bin\Debug\EntityFramework.SqlServer.xml
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\RentersList.g.cs
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\RentersList.baml

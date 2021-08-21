@@ -18,6 +18,8 @@ namespace CarsRent.BL.Entities
         public double Price { get; set; }
         public DateTime PassportIssuingDate { get; set; }
 
+        public Car() { }
+
         public Car(string brand, string model, string color, string year,
             string passportSeries, string passportNumber, string vin,
             string bodyNumber, string registrationNumber, string engineNumber,

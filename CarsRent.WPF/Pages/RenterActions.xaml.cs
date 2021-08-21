@@ -1,4 +1,5 @@
-﻿using CarsRent.BL.Entities;
+﻿using CarsRent.BL.BDRequests;
+using CarsRent.BL.Entities;
 using CarsRent.WPF.UI_Utilities;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,10 @@ namespace CarsRent.WPF.Pages
         public RenterActions(Renter renter = null)
         {
             InitializeComponent();
+
+            _currentRenter = renter;
+
+            FillFields();
         }
 
         private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
@@ -40,17 +45,25 @@ namespace CarsRent.WPF.Pages
             var issuingOrganization = tbxIssuingOrganization.Text;
             var registrationPlace = tbxRegistrationPlace.Text;
 
-            var passport = new Passport(name, surname, patronymic, series, number, issueDate, issuingOrganization, registrationPlace);
+            var renter = new Renter(name, surname, patronymic, series, number, issueDate, issuingOrganization, registrationPlace);
+
+            // TODO: Проверка на существование.
 
             if (_currentRenter == null)
-                _currentRenter = new Renter(passport);
+            {
+                _currentRenter = renter;
+                Query<Renter>.Insert(_currentRenter);
+            }
             else
-                _currentRenter.Passport = passport;
-
-            // TODO: Тут должно быть сохранение.
+            {
+                var id = _currentRenter.Id;
+                _currentRenter = renter;
+                _currentRenter.Id = id;
+                Query<Renter>.Update(_currentRenter);
+            }
         }
 
-        private void FillFields(Renter renter = null)
+        private void FillFields()
         {
             var name = "";
             var surname = "";
@@ -61,16 +74,16 @@ namespace CarsRent.WPF.Pages
             var issuingOrganization = "";
             var registrationPlace = "";
 
-            if (renter != null)
+            if (_currentRenter != null)
             {
-                name = renter.Passport.Name;
-                surname = renter.Passport.Surname;
-                patronymic = renter.Passport.Patronymic;
-                series = renter.Passport.Series;
-                number = renter.Passport.Number;
-                issueDate = renter.Passport.IssueDate.ToString();
-                issuingOrganization = renter.Passport.IssuingOrganization;
-                registrationPlace = renter.Passport.RegistrationPlace;
+                name = _currentRenter.Name;
+                surname = _currentRenter.Surname;
+                patronymic = _currentRenter.Patronymic;
+                series = _currentRenter.Series;
+                number = _currentRenter.Number;
+                issueDate = _currentRenter.IssueDate.ToString();
+                issuingOrganization = _currentRenter.IssuingOrganization;
+                registrationPlace = _currentRenter.RegistrationPlace;
             }
 
             tbxName.Text = name;

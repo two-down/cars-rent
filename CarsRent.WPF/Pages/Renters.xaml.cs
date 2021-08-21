@@ -1,4 +1,5 @@
-﻿using CarsRent.BL.Entities;
+﻿using CarsRent.BL.BDRequests;
+using CarsRent.BL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,19 @@ namespace CarsRent.WPF.Pages
         public Renters()
         {
             InitializeComponent();
+
+            rentersFrame.Content = new RentersList();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            rentetsFrame.Content = new RenterActions();
+            rentersFrame.Content = new RenterActions();
+        }
+
+        private void btnList_Click(object sender, RoutedEventArgs e)
+        {
+            rentersFrame.Content = new RentersList();
+            btnList.Visibility = Visibility.Hidden;
         }
     }
 }
