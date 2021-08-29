@@ -39,5 +39,11 @@ namespace CarsRent.BL.BDRequests
             using (var context = new Context())
                 return context.DbSet<T>().ToList();
         }
+
+        public static T SelectById(long id)
+        {
+            using (var context = new Context())
+                return context.DbSet<T>().Where(item => item.Id == id).FirstOrDefault();
+        }
     }
 }

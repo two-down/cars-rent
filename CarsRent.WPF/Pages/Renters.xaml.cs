@@ -19,11 +19,13 @@ namespace CarsRent.WPF.Pages
 {
     public partial class Renters : Page
     {
+        private RentersList _currentRentersList;
         public Renters()
         {
             InitializeComponent();
 
-            rentersFrame.Content = new RentersList();
+            _currentRentersList = new RentersList();
+            rentersFrame.Content = _currentRentersList;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -33,8 +35,20 @@ namespace CarsRent.WPF.Pages
 
         private void btnList_Click(object sender, RoutedEventArgs e)
         {
-            rentersFrame.Content = new RentersList();
-            btnList.Visibility = Visibility.Hidden;
+            _currentRentersList = new RentersList();
+            rentersFrame.Content = _currentRentersList;
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                _currentRentersList.Delete();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

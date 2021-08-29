@@ -1,14 +1,14 @@
 ﻿using CarsRent.BL.BDRequests;
 using CarsRent.BL.Entities;
+using System;
 using System.Collections.Generic;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace CarsRent.WPF.UI_Utilities
 {
     public class ObjectList<T> where T : BaseEntity
     {
-        private List<T> _objects;
+        public List<T> Objects { get; private set; }
         private StackPanel _stackPanel;
 
         public ObjectList(ref StackPanel stackPanel)
@@ -17,24 +17,57 @@ namespace CarsRent.WPF.UI_Utilities
 
             UpdateList();
 
-            ShowList(_objects);
+            ShowList(Objects);
         }
 
         public void UpdateList()
         {
-            _objects = Query<T>.SelectAll();
+            Objects = Query<T>.SelectAll();
         }
 
         public void ShowList(List<T> objects)
         {
+            var listBox = new ListBox();
+
             foreach (var obj in objects)
             {
-                var tbl = new Label();
-                tbl.Content = obj.ToString();
-                tbl.Tag = obj.Id;
+                var item = new ListBoxItem();
+                item.Content = obj.ToString();
+                item.Tag = obj.Id;
 
-                _stackPanel.Children.Add(tbl);
+                listBox.Items.Add(item);
             }
+
+            _stackPanel.Children.Add(listBox);
+        }
+
+        private T GetSelectedObject()
+        {
+            var listBox = _stackPanel.Children[0] as ListBox;
+            var item = listBox.SelectedItem as ListBoxItem;
+
+            T obj;
+
+            try
+            {
+                obj = Query<T>.SelectById(int.Parse(item.Tag.ToString()));
+            }
+            catch (NullReferenceException ex)
+            {
+                obj = null;
+            }
+
+            if (obj == null)
+                throw new ArgumentException("Выберите из списка, прежде чем удалять/редактировать.");
+
+            return obj;
+        }
+
+        public void DeleteSelectedObject()
+        {
+            var obj = GetSelectedObject();
+
+            Query<T>.Delete(obj);
         }
     }
 }

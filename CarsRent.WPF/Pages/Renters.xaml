@@ -24,7 +24,7 @@
         <Frame x:Name="rentersFrame" Grid.Row="1" Grid.ColumnSpan="3"/>
         
         <Button x:Name="btnAdd" Content="Добавить" Grid.Column="0" Grid.Row="2" Click="btnAdd_Click"/>
-        <Button x:Name="btnChange" Content="Изменить" Grid.Column="1" Grid.Row="2" IsEnabled="False"/>
-        <Button x:Name="btnDelete" Content="Удалить" Grid.Column="2" Grid.Row="2" IsEnabled="False"/>
+        <Button x:Name="btnChange" Content="Изменить" Grid.Column="1" Grid.Row="2"/>
+        <Button x:Name="btnDelete" Content="Удалить" Grid.Column="2" Grid.Row="2" Click="btnDelete_Click"/>
     </Grid>
 </Page>

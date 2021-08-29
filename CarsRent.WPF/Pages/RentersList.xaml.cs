@@ -23,11 +23,18 @@ namespace CarsRent.WPF.Pages
     /// </summary>
     public partial class RentersList : Page
     {
+        private ObjectList<Renter> ObjList;
+
         public RentersList()
         {
             InitializeComponent();
 
-            var objList = new ObjectList<Renter>(ref spList);
+            ObjList = new ObjectList<Renter>(ref spList);
+        }
+
+        public void Delete()
+        {
+            ObjList.DeleteSelectedObject();
         }
     }
 }
