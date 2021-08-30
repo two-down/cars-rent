@@ -21,7 +21,8 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="35*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
@@ -44,15 +45,16 @@
         <Label x:Name="lblIssuingOrganization" Content="Кем выдан" Grid.Row="6" Grid.Column="0"/>
         <Label x:Name="lblRegistrationPlace" Content="Место регистрации" Grid.Row="7" Grid.Column="0"/>
 
-        <TextBox x:Name="tbxSurname" Grid.Row="0" Grid.Column="1"/>
-        <TextBox x:Name="tbxName" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="tbxPatronymic" Grid.Row="2" Grid.Column="1"/>
-        <TextBox x:Name="tbxSeries" Grid.Row="3" Grid.Column="1"/>
-        <TextBox x:Name="tbxNumber" Grid.Row="4" Grid.Column="1"/>
-        <TextBox x:Name="tbxIssueDate" Grid.Row="5" Grid.Column="1"/>
-        <TextBox x:Name="tbxIssuingOrganization" Grid.Row="6" Grid.Column="1"/>
-        <TextBox x:Name="tbxRegistrationPlace" Grid.Row="7" Grid.Column="1"/>
+        <TextBox x:Name="tbxSurname" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbxName" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbxPatronymic" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbxSeries" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbxNumber" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbxIssueDate" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbxIssuingOrganization" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbxRegistrationPlace" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"/>
 
         <Button x:Name="btnSaveChanges" Content="Сохранить" Grid.Column="1" Grid.Row="8" Click="btnSaveChanges_Click" Margin="50, 25, 50, 25"/>
+        <Button x:Name="btnBack" Content="Назад" Grid.Column="2" Grid.Row="8" Margin="50, 25, 50, 25" Visibility="Hidden"/>
     </Grid>
 </Page>

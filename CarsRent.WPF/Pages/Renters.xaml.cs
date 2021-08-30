@@ -50,5 +50,11 @@ namespace CarsRent.WPF.Pages
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            var renter = _currentRentersList.GetSelectedItem();
+            rentersFrame.Content = new RenterActions(renter);
+        }
     }
 }

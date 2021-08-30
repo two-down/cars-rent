@@ -41,7 +41,7 @@ namespace CarsRent.WPF.UI_Utilities
             _stackPanel.Children.Add(listBox);
         }
 
-        private T GetSelectedObject()
+        public T GetSelectedObject()
         {
             var listBox = _stackPanel.Children[0] as ListBox;
             var item = listBox.SelectedItem as ListBoxItem;

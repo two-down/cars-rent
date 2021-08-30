@@ -36,5 +36,10 @@ namespace CarsRent.WPF.Pages
         {
             ObjList.DeleteSelectedObject();
         }
+
+        public Renter GetSelectedItem()
+        {
+            return ObjList.GetSelectedObject();
+        }
     }
 }
