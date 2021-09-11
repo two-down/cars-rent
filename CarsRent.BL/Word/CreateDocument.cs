@@ -11,13 +11,13 @@ namespace CarsRent.BL.Word
         {
             CopySample(path);
 
-            var doc = new Document(FileMode.Open, path);
+            //var doc = new Document(FileMode.Open, path);
 
-            var car = new Car("Toyota", "Kamri", "Белая", "2004", "FAAA", "8319321", "ОТСУТСТВУЕТ", "SDSDD", "12345",
-                "sdadasdasd", "123 00 DT", 25000, DateTime.Today);
+            //var car = new Car("Toyota", "Kamri", "Белая", "2004", "FAAA", "8319321", "ОТСУТСТВУЕТ", "SDSDD", "12345",
+            //    "sdadasdasd", "123 00 DT", 25000, DateTime.Today);
 
-            var rules = new ReplaceRules(landLord, renter, car);
-            doc.Replace(rules.ReplaceWords);
+            //var rules = new ReplaceRules(landLord, renter, car);
+            //doc.Replace(rules.ReplaceWords);
         }
 
         private static void CopySample (string path)

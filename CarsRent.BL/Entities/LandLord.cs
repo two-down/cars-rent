@@ -1,6 +1,7 @@
 ﻿using CarsRent.BL.Validators;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace CarsRent.BL.Entities
 {
@@ -26,12 +27,14 @@ namespace CarsRent.BL.Entities
             if (string.IsNullOrWhiteSpace(validationMessage) == false)
                 throw new Exception(validationMessage);
 
+            var provider = CultureInfo.InvariantCulture;
+
             Name = name;
             Surname = surname;
             Patronymic = patronymic;
             Series = series;
             Number = number;
-            IssueDate = DateTime.Parse(issueDate);
+            IssueDate = DateTime.ParseExact(issueDate, "dd.MM.yyyy", provider);
             IssuingOrganization = issuingOrganization;
             RegistrationPlace = registrationPlace;
         }
@@ -51,7 +54,7 @@ namespace CarsRent.BL.Entities
             list.Add(Patronymic);
             list.Add(Series);
             list.Add(Number);
-            list.Add(IssueDate.ToString());
+            list.Add(IssueDate.ToString("dd.MM.yyyy"));
             list.Add(IssuingOrganization);
             list.Add(RegistrationPlace);
 

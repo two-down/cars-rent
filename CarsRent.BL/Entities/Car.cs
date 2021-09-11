@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace CarsRent.BL.Entities
 {
@@ -24,8 +25,10 @@ namespace CarsRent.BL.Entities
         public Car(string brand, string model, string color, string year,
             string passportSeries, string passportNumber, string vin,
             string bodyNumber, string registrationNumber, string engineNumber,
-            string engineDisplacement, double price, DateTime passportIssuingDate)
+            string engineDisplacement, string price, string passportIssuingDate)
         {
+            var provider = CultureInfo.InvariantCulture;
+
             Brand = brand;
             Model = model;
             Color = color;
@@ -37,8 +40,13 @@ namespace CarsRent.BL.Entities
             RegistrationNumber = registrationNumber;
             EngineNumber = engineNumber;
             EngineDisplacement = engineDisplacement;
-            Price = price;
-            PassportIssuingDate = passportIssuingDate;
+            Price = long.Parse(price);
+            PassportIssuingDate = DateTime.ParseExact(passportIssuingDate, "dd.MM.yyyy", provider);
+        }
+
+        public override string ToString()
+        {
+            return $"{Brand} {Model} {Color} паспорт: серия {PassportSeries} № {PassportNumber}";
         }
 
         public override List<string> GetData()
@@ -57,7 +65,7 @@ namespace CarsRent.BL.Entities
             list.Add(EngineNumber);
             list.Add(EngineDisplacement);
             list.Add(Price.ToString());
-            list.Add(PassportIssuingDate.ToString());
+            list.Add(PassportIssuingDate.ToString("dd.MM.yyyy"));
 
             return list;
         }

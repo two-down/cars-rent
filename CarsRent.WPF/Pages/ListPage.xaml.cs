@@ -1,4 +1,5 @@
-﻿using CarsRent.BL.Entities;
+﻿using CarsRent.BL.BDRequests;
+using CarsRent.BL.Entities;
 using CarsRent.WPF.UI_Utilities;
 using System;
 using System.Collections.Generic;
@@ -45,13 +46,17 @@ namespace CarsRent.WPF.Pages
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Найти выделенный объект
-            foreach (var children in spItems.Children)
-            {
-                
-            }
+            var listBox = spItems.Children[0] as ListBox;
+            var selectedItem = listBox.SelectedItem as ListBoxItem;
 
-            _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType);
+            BaseEntity item;
+
+            if (_objectType == "renters")
+                item = Query<Renter>.SelectById(long.Parse(selectedItem.Tag.ToString()));
+            else
+                item = Query<Car>.SelectById(long.Parse(selectedItem.Tag.ToString()));
+
+            _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType, item);
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)

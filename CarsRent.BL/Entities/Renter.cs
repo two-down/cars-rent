@@ -54,7 +54,7 @@ namespace CarsRent.BL.Entities
             list.Add(Patronymic);
             list.Add(Series);
             list.Add(Number);
-            list.Add(IssueDate.ToString());
+            list.Add(IssueDate.ToString("dd.MM.yyyy"));
             list.Add(IssuingOrganization);
             list.Add(RegistrationPlace);
 
