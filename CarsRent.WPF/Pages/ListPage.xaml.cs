@@ -33,6 +33,11 @@ namespace CarsRent.WPF.Pages
             _mainWindow = mainWindow;
         }
 
+        private void Update()
+        {
+            _listPageSwitcher.UpdateList();
+        }
+
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType);
@@ -41,12 +46,18 @@ namespace CarsRent.WPF.Pages
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Найти выделенный объект
+            foreach (var children in spItems.Children)
+            {
+                
+            }
+
             _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType);
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             _listPageSwitcher.DeleteSelectedItem();
+            Update();
         }
     }
 }

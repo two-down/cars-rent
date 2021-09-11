@@ -18,7 +18,7 @@
             <RowDefinition Height="80*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
-        
+
         <StackPanel x:Name="spItems" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
 
         <Button x:Name="btnAdd" Content="Добавить" Grid.Column="0" Grid.Row="1" Click="btnAdd_Click"/>

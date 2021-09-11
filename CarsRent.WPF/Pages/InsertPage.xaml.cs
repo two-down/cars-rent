@@ -37,26 +37,38 @@ namespace CarsRent.WPF.Pages
         private void CreateLayaout(BaseEntity item = null)
         {
             var items = new List<string>();
+            var labels = new List<string>();
 
             if (item != null)
             {
                 items = item.GetData();
+
+                if (_objectType == "renters")
+                    labels = LabelsForInputs.Human;
+                else
+                    labels = LabelsForInputs.Car;
             }
             else
             {
                 int counter;
 
                 if (_objectType == "renters")
+                {
                     counter = 8;
+                    labels = LabelsForInputs.Human;
+                }
                 else
+                {
                     counter = 13;
+                    labels = LabelsForInputs.Car;
+                }
 
                 for (var i = 0; i < counter; i++)
                     items.Add("");
             }
 
-            foreach (var el in items)
-                _inputsConstructor.AddTextBox("", el);
+            for (var i = 0; i < items.Count; i++)
+                _inputsConstructor.AddTextBox(labels[i], items[i]);
 
             if (item != null)
                 _inputsConstructor.AddTextBox("ID", item.Id.ToString());
@@ -69,7 +81,9 @@ namespace CarsRent.WPF.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            
+            var list = InputDataToStringList.Convert(spInputs);
+
+            InsertListAsObject.Insert(list, _objectType);
         }
     }
 }

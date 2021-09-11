@@ -18,7 +18,7 @@ namespace CarsRent.BL.Entities
         public LandLord() { }
 
         public LandLord(string name, string surname, string patronymic, string series, string number,
-                        DateTime issueDate, string issuingOrganization, string registrationPlace)
+                        string issueDate, string issuingOrganization, string registrationPlace)
         {
             var validationMessage = PassportValidator.Validate(name, surname, patronymic, series, number,
                                                                 issueDate, issuingOrganization, registrationPlace);
@@ -31,7 +31,7 @@ namespace CarsRent.BL.Entities
             Patronymic = patronymic;
             Series = series;
             Number = number;
-            IssueDate = issueDate;
+            IssueDate = DateTime.Parse(issueDate);
             IssuingOrganization = issuingOrganization;
             RegistrationPlace = registrationPlace;
         }

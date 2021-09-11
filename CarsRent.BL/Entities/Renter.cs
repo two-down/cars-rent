@@ -1,6 +1,7 @@
 ﻿using CarsRent.BL.Validators;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace CarsRent.BL.Entities
 {
@@ -18,7 +19,7 @@ namespace CarsRent.BL.Entities
         public Renter() { }
 
         public Renter(string name, string surname, string patronymic, string series, string number,
-                        DateTime issueDate, string issuingOrganization, string registrationPlace)
+                        string issueDate, string issuingOrganization, string registrationPlace)
         {
             var validationMessage = PassportValidator.Validate(name, surname, patronymic, series, number,
                                                                 issueDate, issuingOrganization, registrationPlace);
@@ -26,12 +27,14 @@ namespace CarsRent.BL.Entities
             if (string.IsNullOrWhiteSpace(validationMessage) == false)
                 throw new Exception(validationMessage);
 
+            var provider = CultureInfo.InvariantCulture;
+
             Name = name;
             Surname = surname;
             Patronymic = patronymic;
             Series = series;
             Number = number;
-            IssueDate = issueDate;
+            IssueDate = DateTime.ParseExact(issueDate, "dd.MM.yyyy", provider);
             IssuingOrganization = issuingOrganization;
             RegistrationPlace = registrationPlace;
         }

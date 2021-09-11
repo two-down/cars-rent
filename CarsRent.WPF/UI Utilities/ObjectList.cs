@@ -2,6 +2,7 @@
 using CarsRent.BL.Entities;
 using System;
 using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CarsRent.WPF.UI_Utilities
@@ -16,8 +17,7 @@ namespace CarsRent.WPF.UI_Utilities
             _stackPanel = stackPanel;
 
             UpdateList();
-
-            ShowList(Objects);
+            UpdateList();
         }
 
         public override void UpdateList()
@@ -29,6 +29,17 @@ namespace CarsRent.WPF.UI_Utilities
 
         public void ShowList(List<T> objects)
         {
+            List<UIElement> list = new List<UIElement>();
+
+            foreach (var children in _stackPanel.Children)
+            {
+                var uiEl = children as UIElement;
+                list.Add(uiEl);
+            }
+
+            foreach (var children in list)
+                _stackPanel.Children.Remove(children);
+
             var listBox = new ListBox();
 
             foreach (var obj in objects)

@@ -72,7 +72,10 @@
       <DependentUpon>ListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI Utilities\BaseObjectList.cs" />
+    <Compile Include="UI Utilities\InputDataToStringList.cs" />
     <Compile Include="UI Utilities\InputsConstructor.cs" />
+    <Compile Include="UI Utilities\InsertListAsObject.cs" />
+    <Compile Include="UI Utilities\LabelsForInputs.cs" />
     <Compile Include="UI Utilities\ListPageSwitcher.cs" />
     <Compile Include="UI Utilities\ObjectList.cs" />
     <Page Include="MainWindow.xaml">

@@ -21,6 +21,11 @@ namespace CarsRent.WPF.UI_Utilities
             }
         }
 
+        public void UpdateList()
+        {
+            objectList.UpdateList();
+        }
+
         public void DeleteSelectedItem()
         {
             objectList.DeleteSelectedObject();
