@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\_projects\C#\CarsRent\CarsRent.WPF\App.xaml
-61155209176
+5-1887600357
 
-131684320091
+14-125101058
 171391917866
-MainWindow.xaml;Pages\RenterActions.xaml;Pages\Renters.xaml;Pages\RentersList.xaml;Pages\Settings.xaml;Pages\SettingsCategory.xaml;
+MainWindow.xaml;Pages\InsertPage.xaml;Pages\ListPage.xaml;Pages\Settings.xaml;Pages\SettingsCategory.xaml;
 
 False
 

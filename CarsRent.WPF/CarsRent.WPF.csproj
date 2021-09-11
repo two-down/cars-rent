@@ -65,16 +65,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Pages\RenterActions.xaml.cs">
-      <DependentUpon>RenterActions.xaml</DependentUpon>
+    <Compile Include="Pages\InsertPage.xaml.cs">
+      <DependentUpon>InsertPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Renters.xaml.cs">
-      <DependentUpon>Renters.xaml</DependentUpon>
+    <Compile Include="Pages\ListPage.xaml.cs">
+      <DependentUpon>ListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RentersList.xaml.cs">
-      <DependentUpon>RentersList.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="UI Utilities\BaseObjectList.cs" />
     <Compile Include="UI Utilities\InputsConstructor.cs" />
+    <Compile Include="UI Utilities\ListPageSwitcher.cs" />
     <Compile Include="UI Utilities\ObjectList.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -88,15 +87,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\RenterActions.xaml">
+    <Page Include="Pages\InsertPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Renters.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\RentersList.xaml">
+    <Page Include="Pages\ListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

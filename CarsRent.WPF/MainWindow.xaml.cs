@@ -20,9 +20,6 @@ using System.Windows.Shapes;
 
 namespace CarsRent.WPF
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -40,7 +37,16 @@ namespace CarsRent.WPF
 
         private void btnUsersList_Click(object sender, RoutedEventArgs e)
         {
-            mainFrame.Content = new Renters();
+            var window = this;
+
+            mainFrame.Content = new ListPage("renters", ref window);
+        }
+
+        private void btnCarsList_Click(object sender, RoutedEventArgs e)
+        {
+            var window = this;
+
+            mainFrame.Content = new ListPage("cars", ref window);
         }
     }
 }

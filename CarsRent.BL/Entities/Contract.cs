@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarsRent.BL.Entities
 {
@@ -27,6 +28,21 @@ namespace CarsRent.BL.Entities
             LandLord = landLord;
             Renter = renter;
             Car = car;
+            ConclusionDate = conclusionDate;
+            EndDate = endDate;
+        }
+
+        public override List<string> GetData()
+        {
+            var list = new List<string>();
+
+            list.Add(LandLord.Id.ToString());
+            list.Add(Renter.Id.ToString());
+            list.Add(Car.Id.ToString());
+            list.Add(ConclusionDate.ToString());
+            list.Add(EndDate.ToString());
+
+            return list;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarsRent.BL.Entities
 {
@@ -38,6 +39,27 @@ namespace CarsRent.BL.Entities
             EngineDisplacement = engineDisplacement;
             Price = price;
             PassportIssuingDate = passportIssuingDate;
+        }
+
+        public override List<string> GetData()
+        {
+            var list = new List<string>();
+
+            list.Add(Brand);
+            list.Add(Model);
+            list.Add(Color);
+            list.Add(Year);
+            list.Add(PassportSeries);
+            list.Add(PassportNumber);
+            list.Add(VIN);
+            list.Add(BodyNumber);
+            list.Add(RegistrationNumber);
+            list.Add(EngineNumber);
+            list.Add(EngineDisplacement);
+            list.Add(Price.ToString());
+            list.Add(PassportIssuingDate.ToString());
+
+            return list;
         }
     }
 }

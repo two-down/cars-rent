@@ -1,5 +1,6 @@
 ﻿using CarsRent.BL.Validators;
 using System;
+using System.Collections.Generic;
 
 namespace CarsRent.BL.Entities
 {
@@ -39,6 +40,22 @@ namespace CarsRent.BL.Entities
         {
             return $"{Surname} {Name} {Patronymic} паспорт: серия {Series} № {Number}, выданный" +
                 $" {IssuingOrganization} {IssueDate:dd.MM.yyyy}, проживающий(ая) по адресу: {RegistrationPlace}";
+        }
+
+        public override List<string> GetData()
+        {
+            var list = new List<string>();
+
+            list.Add(Name);
+            list.Add(Surname);
+            list.Add(Patronymic);
+            list.Add(Series);
+            list.Add(Number);
+            list.Add(IssueDate.ToString());
+            list.Add(IssuingOrganization);
+            list.Add(RegistrationPlace);
+
+            return list;
         }
     }
 }

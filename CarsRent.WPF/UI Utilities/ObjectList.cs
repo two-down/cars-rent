@@ -6,7 +6,7 @@ using System.Windows.Controls;
 
 namespace CarsRent.WPF.UI_Utilities
 {
-    public class ObjectList<T> where T : BaseEntity
+    public class ObjectList<T> : BaseObjectList where T : BaseEntity
     {
         public List<T> Objects { get; private set; }
         private StackPanel _stackPanel;
@@ -20,9 +20,11 @@ namespace CarsRent.WPF.UI_Utilities
             ShowList(Objects);
         }
 
-        public void UpdateList()
+        public override void UpdateList()
         {
             Objects = Query<T>.SelectAll();
+
+            ShowList(Objects);
         }
 
         public void ShowList(List<T> objects)
@@ -63,7 +65,7 @@ namespace CarsRent.WPF.UI_Utilities
             return obj;
         }
 
-        public void DeleteSelectedObject()
+        public override void DeleteSelectedObject()
         {
             var obj = GetSelectedObject();
 
