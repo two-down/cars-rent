@@ -29,3 +29,5 @@ D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\ListPage.g.cs
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\ListPage.baml
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\InsertPage.g.cs
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\InsertPage.baml
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\MakeContract.g.cs
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\MakeContract.baml

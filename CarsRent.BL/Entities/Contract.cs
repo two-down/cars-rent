@@ -11,10 +11,11 @@ namespace CarsRent.BL.Entities
 
         public DateTime ConclusionDate { get; set; }
         public DateTime EndDate { get; set; }
+        public RideType RideType { get; set; }
 
         public Contract() { }
 
-        public Contract(LandLord landLord, Renter renter, Car car, DateTime conclusionDate, DateTime endDate)
+        public Contract(LandLord landLord, Renter renter, Car car, DateTime conclusionDate, DateTime endDate, RideType rideType)
         {
             if (landLord == null)
                 throw new ArgumentNullException(nameof(landLord));
@@ -30,6 +31,7 @@ namespace CarsRent.BL.Entities
             Car = car;
             ConclusionDate = conclusionDate;
             EndDate = endDate;
+            RideType = rideType;
         }
 
         public override List<string> GetData()

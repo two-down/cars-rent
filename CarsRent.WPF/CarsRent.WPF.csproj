@@ -71,6 +71,9 @@
     <Compile Include="Pages\ListPage.xaml.cs">
       <DependentUpon>ListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MakeContract.xaml.cs">
+      <DependentUpon>MakeContract.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI Utilities\BaseObjectList.cs" />
     <Compile Include="UI Utilities\InputDataToStringList.cs" />
     <Compile Include="UI Utilities\InputsConstructor.cs" />
@@ -95,6 +98,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MakeContract.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
