@@ -63,12 +63,12 @@
 
             <TextBox x:Name="tbxEndDate" Grid.Row="1" Grid.Column="1"/>
 
-            <Label Content="Дата окончания действия договора" HorizontalAlignment="Center"
+            <Label Content="Тип поездки" HorizontalAlignment="Center"
                    VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
 
-            <TextBox x:Name="tbxRideType" Grid.Row="2" Grid.Column="1"/>
+            <ComboBox x:Name="cbxRideType" Grid.Row="2" Grid.Column="1"/>
 
-            <Label Content="Дата окончания действия договора" HorizontalAlignment="Center"
+            <Label Content="Цена поездки" HorizontalAlignment="Center"
                    VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
 
             <TextBox x:Name="tbxRidePrice" Grid.Row="3" Grid.Column="1"/>

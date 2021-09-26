@@ -23,8 +23,10 @@ namespace CarsRent.BL.Settings
 
             if (typeof(T) == typeof(GlobalSettings))
                 fileName = "global_settings";
+            else if (typeof(T) == typeof(DefaultData))
+                fileName = "default_data";
             else
-                fileName = "";
+                fileName = "unknown";
 
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + $"//{fileName}.xml";
 

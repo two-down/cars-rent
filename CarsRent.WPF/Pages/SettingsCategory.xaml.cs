@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Windows.Controls;
 using System;
 using System.Windows;
+using CarsRent.BL.BDRequests;
+using CarsRent.BL.Entities;
+using System.Linq;
 
 namespace CarsRent.WPF.Pages
 {
@@ -27,10 +30,50 @@ namespace CarsRent.WPF.Pages
             switch (_settingsType)
             {
                 case SettingsTypes.GENERAL:
-                    var settings = SettingsManager<GlobalSettings>.Load();
-                    ShowGeneral(settings);
+                    var globalSettings = SettingsManager<GlobalSettings>.Load();
+                    ShowGeneral(globalSettings);
+                    break;
+
+                case SettingsTypes.DEFAULT_DATA:
+                    var defaultDataSettings = SettingsManager<DefaultData>.Load();
+                    ShowDefaultData(defaultDataSettings);
                     break;
             }
+        }
+
+        private void ShowDefaultData(DefaultData settings)
+        {
+            var name = "";
+            var surname = "";
+            var patronymic = "";
+            var series = "";
+            var number = "";
+            var issueDate = "";
+            var issuingOrganization = "";
+            var registrationPlace = "";
+
+            var landLord = Query<LandLord>.SelectAll().FirstOrDefault();
+
+            if (landLord != null)
+            {
+                name = landLord.Name;
+                surname = landLord.Surname;
+                patronymic = landLord.Patronymic;
+                series = landLord.Series;
+                number = landLord.Number;
+                issueDate = landLord.IssueDate.ToString("dd.MM.yyyy");
+                issuingOrganization = landLord.IssuingOrganization;
+                registrationPlace = landLord.RegistrationPlace;
+            }
+
+            _constructor.AddTextBox("Имя", name);
+            _constructor.AddTextBox("Фамилия", surname);
+            _constructor.AddTextBox("Отчество", patronymic);
+            _constructor.AddTextBox("Серия паспорта", series);
+            _constructor.AddTextBox("Номер паспорта", number);
+            _constructor.AddTextBox("Дата выдачи паспорта", issueDate);
+            _constructor.AddTextBox("Кем выдан паспорт", issuingOrganization);
+            _constructor.AddTextBox("Место регистрации (прописка)", registrationPlace);
         }
 
         private void ShowGeneral(GlobalSettings settings)

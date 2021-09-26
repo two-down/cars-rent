@@ -14,3 +14,4 @@ D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.CopyComplete
 D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.Migrations.InitialCreate.resources
 D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.GenerateResource.cache
 D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.Migrations.deletingpassport.resources
+D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.Migrations.cars_and_contracts_model_changed.resources

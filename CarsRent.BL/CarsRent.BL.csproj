@@ -68,8 +68,13 @@
     <Compile Include="Migrations\202108210859574_deleting passport.designer.cs">
       <DependentUpon>202108210859574_deleting passport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109260757432_cars_and_contracts_model_changed.cs" />
+    <Compile Include="Migrations\202109260757432_cars_and_contracts_model_changed.designer.cs">
+      <DependentUpon>202109260757432_cars_and_contracts_model_changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\DefaultData.cs" />
     <Compile Include="Settings\GlobalSettings.cs" />
     <Compile Include="Settings\InputsToSettings.cs" />
     <Compile Include="Settings\SettingsManager.cs" />
@@ -118,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108210859574_deleting passport.resx">
       <DependentUpon>202108210859574_deleting passport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109260757432_cars_and_contracts_model_changed.resx">
+      <DependentUpon>202109260757432_cars_and_contracts_model_changed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

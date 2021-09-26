@@ -26,6 +26,8 @@ namespace CarsRent.WPF.Pages
         {
             InitializeComponent();
 
+            cbxRideType.ItemsSource = Enum.GetValues(typeof(RideType));
+
             foreach (var renter in Query<Renter>.SelectAll())
                 _renters.Add(renter.ToString(), renter.Id);
 
@@ -59,7 +61,7 @@ namespace CarsRent.WPF.Pages
         private void btnMakeContract_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Загрузка лэндлорда
-            var landlord = new LandLord();
+            var landlord = Query<LandLord>.SelectAll().FirstOrDefault();
 
             var renter = Query<Renter>.SelectById(_renters[cbRenter.SelectedItem.ToString()]);
             var car = Query<Car>.SelectById(_cars[cbCar.SelectedItem.ToString()]);
@@ -67,11 +69,11 @@ namespace CarsRent.WPF.Pages
             var beginDate = DateTime.Parse(tbxBeginDate.Text);
             var endDate = DateTime.Parse(tbxEndDate.Text);
             var price = double.Parse(tbxRidePrice.Text);
-            var type = tbxRideType.Text;
+            var rideType = (RideType)cbxRideType.SelectedItem;
 
-            // TODO: Добавить выбор поездки в город и за город
+            var contract = new Contract(landlord, renter, car, beginDate, endDate, rideType, price);
 
-            var contract = new Contract(landlord, renter, car, beginDate, endDate);
+            MessageBox.Show(contract.LandLord.Name);
         }
     }
 }
