@@ -45,5 +45,12 @@ namespace CarsRent.BL.BDRequests
             using (var context = new Context())
                 return context.DbSet<T>().Where(item => item.Id == id).FirstOrDefault();
         }
+
+        public static Contract SelectContract(long id)
+        {
+            using (var context = new Context())
+                return context.DbSet<Contract>().Include(x => x.LandLord).Include(x => x.Renter).Include(x => x.Car)
+                    .Where(item => item.Id == id).FirstOrDefault();
+        }
     }
 }

@@ -1,13 +1,14 @@
-﻿using System;
+﻿using CarsRent.BL.BDRequests;
+using System;
 using System.Collections.Generic;
 
 namespace CarsRent.BL.Entities
 {
     public class Contract : BaseEntity
     {
-        public LandLord LandLord { get; set; }
-        public Renter Renter { get; set; }
-        public Car Car { get; set; }
+        public virtual LandLord LandLord { get; set; }
+        public virtual Renter Renter { get; set; }
+        public virtual Car Car { get; set; }
 
         public DateTime ConclusionDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -41,15 +42,24 @@ namespace CarsRent.BL.Entities
 
         public override List<string> GetData()
         {
+            var contract = Query<Contract>.SelectContract(Id);
+
             var list = new List<string>();
 
-            list.Add(LandLord.Id.ToString());
-            list.Add(Renter.Id.ToString());
-            list.Add(Car.Id.ToString());
-            list.Add(ConclusionDate.ToString());
-            list.Add(EndDate.ToString());
+            list.Add(contract.LandLord.Id.ToString());
+            list.Add(contract.Renter.Id.ToString());
+            list.Add(contract.Car.Id.ToString());
+            list.Add(contract.ConclusionDate.ToString());
+            list.Add(contract.EndDate.ToString());
 
             return list;
+        }
+
+        public override string ToString()
+        {
+            var contract = Query<Contract>.SelectContract(Id);
+
+            return $"{contract.Renter.Surname} - {contract.Car.Brand}";
         }
     }
 }

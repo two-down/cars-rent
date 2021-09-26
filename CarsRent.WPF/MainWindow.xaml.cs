@@ -38,5 +38,12 @@ namespace CarsRent.WPF
         {
             mainFrame.Content = new MakeContract();
         }
+
+        private void btnContractsList_Click(object sender, RoutedEventArgs e)
+        {
+            var window = this;
+
+            mainFrame.Content = new ListPage("contracts", ref window);
+        }
     }
 }

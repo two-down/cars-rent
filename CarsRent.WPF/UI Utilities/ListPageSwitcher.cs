@@ -18,6 +18,10 @@ namespace CarsRent.WPF.UI_Utilities
                 case "cars":
                     objectList = new ObjectList<Car>(ref stackPanel);
                     break;
+
+                case "contracts":
+                    objectList = new ObjectList<Contract>(ref stackPanel);
+                    break;
             }
         }
 

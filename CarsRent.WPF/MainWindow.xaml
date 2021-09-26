@@ -16,12 +16,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Button x:Name="btnCreate" Grid.Row="0" Grid.Column="0" Content="Составить договор" Click="btnCreate_Click"/>
-        <Button x:Name="btnCarsList" Grid.Row="0" Grid.Column="1" Content="Список машин" Click="btnCarsList_Click"/>
-        <Button x:Name="btnUsersList" Grid.Row="0" Grid.Column="2" Content="Список арендаторов" Click="btnUsersList_Click"/>
-        <Button x:Name="btnSettings" Grid.Row="0" Grid.Column="3" Content="Настройки" Click="btnSettings_Click"/>
+        <Button x:Name="btnContractsList" Grid.Column="1" Grid.Row="0" Content="Список договоров" Click="btnContractsList_Click"/>
+        <Button x:Name="btnCarsList" Grid.Row="0" Grid.Column="2" Content="Список машин" Click="btnCarsList_Click"/>
+        <Button x:Name="btnUsersList" Grid.Row="0" Grid.Column="3" Content="Список арендаторов" Click="btnUsersList_Click"/>
+        <Button x:Name="btnSettings" Grid.Row="0" Grid.Column="4" Content="Настройки" Click="btnSettings_Click"/>
 
         <Frame x:Name="mainFrame" Grid.Row="1" Grid.ColumnSpan="5"/>
     </Grid>

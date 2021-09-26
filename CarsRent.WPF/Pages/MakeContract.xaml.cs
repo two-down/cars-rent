@@ -22,7 +22,7 @@ namespace CarsRent.WPF.Pages
         private Dictionary<string, long> _renters = new Dictionary<string, long>();
         private Dictionary<string, long> _cars = new Dictionary<string, long>();
 
-        public MakeContract()
+        public MakeContract(Contract contract = null)
         {
             InitializeComponent();
 
@@ -36,6 +36,11 @@ namespace CarsRent.WPF.Pages
 
             cbRenter.ItemsSource = _renters.Keys;
             cbCar.ItemsSource = _cars.Keys;
+
+            if (contract != null)
+            {
+
+            }
         }
 
         private void cbRenter_TextChanged(object sender, TextChangedEventArgs e)
@@ -60,7 +65,6 @@ namespace CarsRent.WPF.Pages
 
         private void btnMakeContract_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Загрузка лэндлорда
             var landlord = Query<LandLord>.SelectAll().FirstOrDefault();
 
             var renter = Query<Renter>.SelectById(_renters[cbRenter.SelectedItem.ToString()]);
@@ -73,7 +77,9 @@ namespace CarsRent.WPF.Pages
 
             var contract = new Contract(landlord, renter, car, beginDate, endDate, rideType, price);
 
-            MessageBox.Show(contract.LandLord.Name);
+            // TODO: Проверка на одинаковые договора.
+
+            Query<Contract>.Insert(contract);
         }
     }
 }

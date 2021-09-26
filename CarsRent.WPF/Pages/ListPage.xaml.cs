@@ -41,7 +41,10 @@ namespace CarsRent.WPF.Pages
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType);
+            if (_objectType == "contracts")
+                _mainWindow.mainFrame.Content = new MakeContract();
+            else
+                _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType);
         }
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
@@ -53,10 +56,15 @@ namespace CarsRent.WPF.Pages
 
             if (_objectType == "renters")
                 item = Query<Renter>.SelectById(long.Parse(selectedItem.Tag.ToString()));
-            else
+            else if (_objectType == "cars")
                 item = Query<Car>.SelectById(long.Parse(selectedItem.Tag.ToString()));
+            else
+                item = Query<Contract>.SelectById(long.Parse(selectedItem.Tag.ToString()));
 
-            _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType, item);
+            if (_objectType == "contracts")
+                _mainWindow.mainFrame.Content = new MakeContract();
+            else
+                _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType, item);
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
