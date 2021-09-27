@@ -62,7 +62,7 @@ namespace CarsRent.WPF.Pages
                 item = Query<Contract>.SelectById(long.Parse(selectedItem.Tag.ToString()));
 
             if (_objectType == "contracts")
-                _mainWindow.mainFrame.Content = new MakeContract();
+                _mainWindow.mainFrame.Content = new MakeContract(item as Contract);
             else
                 _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType, item);
         }

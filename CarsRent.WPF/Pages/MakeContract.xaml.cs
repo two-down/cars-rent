@@ -3,17 +3,9 @@ using CarsRent.BL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CarsRent.WPF.Pages
 {
@@ -39,7 +31,14 @@ namespace CarsRent.WPF.Pages
 
             if (contract != null)
             {
+                var fullContract = Query<Contract>.SelectContract(contract.Id);
 
+                cbCar.SelectedItem = _cars.Where(x => x.Value == fullContract.Car.Id).FirstOrDefault().Key;
+                cbRenter.SelectedItem = _renters.Where(x => x.Value == fullContract.Renter.Id).FirstOrDefault().Key;
+                tbxBeginDate.Text = fullContract.ConclusionDate.ToString("dd.MM.yyyy");
+                tbxEndDate.Text = fullContract.EndDate.ToString("dd.MM.yyyy");
+                tbxRidePrice.Text = fullContract.RidePrice.ToString();
+                cbxRideType.SelectedItem = fullContract.RideType;
             }
         }
 
