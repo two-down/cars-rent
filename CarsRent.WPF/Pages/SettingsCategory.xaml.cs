@@ -56,14 +56,14 @@ namespace CarsRent.WPF.Pages
 
             if (landLord != null)
             {
-                name = landLord.Name;
-                surname = landLord.Surname;
-                patronymic = landLord.Patronymic;
-                series = landLord.Series;
-                number = landLord.Number;
-                issueDate = landLord.IssueDate.ToString("dd.MM.yyyy");
-                issuingOrganization = landLord.IssuingOrganization;
-                registrationPlace = landLord.RegistrationPlace;
+                name = landLord.Passport.Name;
+                surname = landLord.Passport.Surname;
+                patronymic = landLord.Passport.Patronymic;
+                series = landLord.Passport.Series;
+                number = landLord.Passport.Number;
+                issueDate = landLord.Passport.IssueDate;
+                issuingOrganization = landLord.Passport.IssuingOrganization;
+                registrationPlace = landLord.Passport.RegistrationPlace;
             }
 
             _constructor.AddTextBox("Имя", name);

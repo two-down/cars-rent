@@ -1,4 +1,5 @@
-﻿using CarsRent.BL.BDRequests;
+﻿using CarsRent.BL;
+using CarsRent.BL.BDRequests;
 using CarsRent.BL.Entities;
 using CarsRent.WPF.Pages;
 using System.Windows;
@@ -12,6 +13,7 @@ namespace CarsRent.WPF
             InitializeComponent();
 
             // TODO: По другому инициализировать базу данных.
+
             Query<Car>.SelectAll();
         }
 

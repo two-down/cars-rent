@@ -1,7 +1,8 @@
 ﻿using CarsRent.BL.BDRequests;
 using CarsRent.BL.Entities;
-using System;
+using CarsRent.BL.Validation;
 using System.Collections.Generic;
+using System.Windows;
 
 namespace CarsRent.WPF.UI_Utilities
 {
@@ -12,16 +13,16 @@ namespace CarsRent.WPF.UI_Utilities
             switch (objectType)
             {
                 case "renters":
-                    InsertRenters(list);
+                    InsertRenter(list);
                     break;
 
                 case "cars":
-                    InsertCars(list);
+                    InsertCar(list);
                     break;
             }
         }
 
-        private static void InsertCars(List<string> list)
+        private static void InsertCar(List<string> list)
         {
             var brand = list[0];
             var model = list[1];
@@ -40,18 +41,23 @@ namespace CarsRent.WPF.UI_Utilities
             var car = new Car(brand, model, color, year, passportSeries, passportNumber, vin, bodyNumber, registrationNumber, engineNumber, 
                 engineDisplacement, price, passportIssuingDate);
 
-            if (list.Count == 14)
+            var validator = new ValidationHelper<Car>();
+
+            if (validator.Validate(car) == true)
             {
-                car.Id = long.Parse(list[13]);
-                Query<Car>.Update(car);
+                if (list.Count == 14)
+                {
+                    car.Id = long.Parse(list[13]);
+                    Query<Car>.Update(car);
+                }
+                else
+                    Query<Car>.Insert(car);
             }
             else
-            {
-                Query<Car>.Insert(car);
-            }
+                MessageBox.Show(validator.Error, "Ошибка валидации");
         }
 
-        private static void InsertRenters(List<string> list)
+        private static void InsertRenter(List<string> list)
         {
             var name = list[0];
             var surname = list[1];
@@ -64,15 +70,20 @@ namespace CarsRent.WPF.UI_Utilities
 
             var renter = new Renter(name, surname, patronymic, series, number, issueDate, issuingOrganization, registrationPlace);
 
-            if (list.Count == 9)
+            var validator = new ValidationHelper<Passport>();
+
+            if (validator.Validate(renter.Passport) == true)
             {
-                renter.Id = long.Parse(list[8]);
-                Query<Renter>.Update(renter);
+                if (list.Count == 14)
+                {
+                    renter.Id = long.Parse(list[13]);
+                    Query<Renter>.Update(renter);
+                }
+                else
+                    Query<Renter>.Insert(renter);
             }
             else
-            {
-                Query<Renter>.Insert(renter);
-            }
+                MessageBox.Show(validator.Error, "Ошибка валидации");
         }
     }
 }

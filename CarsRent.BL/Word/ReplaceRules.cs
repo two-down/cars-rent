@@ -10,7 +10,7 @@ namespace CarsRent.BL.Word
 
         public ReplaceRules(LandLord landLord, Renter renter, Car car)
         {
-            var signature = $"{renter.Surname} {renter.Name[0]}.{renter.Patronymic[0]}.";
+            var signature = $"{renter.Passport.Surname} {renter.Passport.Name[0]}.{renter.Passport.Patronymic[0]}.";
 
             ReplaceWords = new Dictionary<string, string>();
 
@@ -30,7 +30,7 @@ namespace CarsRent.BL.Word
             ReplaceWords.Add("<ЦВЕТ>", car.Color);
             ReplaceWords.Add("<РАБ ОБЪЕМ ДВИГ>", car.EngineDisplacement);
             ReplaceWords.Add("<ЦЕНА>", car.Price.ToString());
-            ReplaceWords.Add("<ДАТА ВЫД ПАСП>", car.PassportIssuingDate.ToString("dd.MMMM.yyyy"));
+            ReplaceWords.Add("<ДАТА ВЫД ПАСП>", car.PassportIssuingDate);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CarsRent.BL.BDRequests;
 using CarsRent.BL.Entities;
+using CarsRent.BL.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,16 @@ namespace CarsRent.WPF.Pages
         private Dictionary<string, long> _renters = new Dictionary<string, long>();
         private Dictionary<string, long> _cars = new Dictionary<string, long>();
 
+        private Contract _currentContract;
+
         public MakeContract(Contract contract = null)
         {
             InitializeComponent();
 
+            _currentContract = contract;
+
             cbxRideType.ItemsSource = Enum.GetValues(typeof(RideType));
+            cbxRideType.SelectedItem = cbxRideType.Items[0];
 
             foreach (var renter in Query<Renter>.SelectAll())
                 _renters.Add(renter.ToString(), renter.Id);
@@ -29,16 +35,14 @@ namespace CarsRent.WPF.Pages
             cbRenter.ItemsSource = _renters.Keys;
             cbCar.ItemsSource = _cars.Keys;
 
-            if (contract != null)
+            if (_currentContract != null)
             {
-                var fullContract = Query<Contract>.SelectContract(contract.Id);
-
-                cbCar.SelectedItem = _cars.Where(x => x.Value == fullContract.Car.Id).FirstOrDefault().Key;
-                cbRenter.SelectedItem = _renters.Where(x => x.Value == fullContract.Renter.Id).FirstOrDefault().Key;
-                tbxBeginDate.Text = fullContract.ConclusionDate.ToString("dd.MM.yyyy");
-                tbxEndDate.Text = fullContract.EndDate.ToString("dd.MM.yyyy");
-                tbxRidePrice.Text = fullContract.RidePrice.ToString();
-                cbxRideType.SelectedItem = fullContract.RideType;
+                cbCar.SelectedItem = _cars.Where(x => x.Value == _currentContract.Car.Id).FirstOrDefault().Key;
+                cbRenter.SelectedItem = _renters.Where(x => x.Value == _currentContract.Renter.Id).FirstOrDefault().Key;
+                tbxBeginDate.Text = _currentContract.ConclusionDate;
+                tbxEndDate.Text = _currentContract.EndDate;
+                tbxRidePrice.Text = _currentContract.RidePrice.ToString();
+                cbxRideType.SelectedItem = _currentContract.RideType;
             }
         }
 
@@ -66,19 +70,56 @@ namespace CarsRent.WPF.Pages
         {
             var landlord = Query<LandLord>.SelectAll().FirstOrDefault();
 
-            var renter = Query<Renter>.SelectById(_renters[cbRenter.SelectedItem.ToString()]);
-            var car = Query<Car>.SelectById(_cars[cbCar.SelectedItem.ToString()]);
+            Renter renter;
+            if (cbRenter.SelectedItem != null)
+                renter = Query<Renter>.SelectById(_renters[cbRenter.SelectedItem.ToString()]);
+            else
+                renter = null;
 
-            var beginDate = DateTime.Parse(tbxBeginDate.Text);
-            var endDate = DateTime.Parse(tbxEndDate.Text);
-            var price = double.Parse(tbxRidePrice.Text);
-            var rideType = (RideType)cbxRideType.SelectedItem;
+            Car car;
+            if (cbRenter.SelectedItem != null)
+                car = Query<Car>.SelectById(_cars[cbCar.SelectedItem.ToString()]);
+            else
+                car = null;
 
-            var contract = new Contract(landlord, renter, car, beginDate, endDate, rideType, price);
+            var beginDate = tbxBeginDate.Text;
+            var endDate = tbxEndDate.Text;
+            var price = tbxRidePrice.Text;
 
-            // TODO: Проверка на одинаковые договора.
+            RideType rideType;
+            if (cbxRideType.SelectedItem != null)
+                rideType = (RideType)cbxRideType.SelectedItem;
+            else
+                rideType = RideType.InTheCity;
 
-            Query<Contract>.Insert(contract);
+            if (_currentContract != null)
+            {
+                _currentContract.LandLord = landlord;
+                _currentContract.Renter = renter;
+                _currentContract.Car = car;
+                _currentContract.ConclusionDate = beginDate;
+                _currentContract.EndDate = endDate;
+                _currentContract.RideType = rideType;
+                _currentContract.RidePrice = price;
+
+                var validator = new ValidationHelper<Contract>();
+
+                if (validator.Validate(_currentContract) == true)
+                    Query<Contract>.Update(_currentContract);
+                else
+                    MessageBox.Show(validator.Error, "Ошибка валидации");
+            }
+            else
+            {
+                _currentContract = new Contract(landlord, renter, car, beginDate, endDate, rideType, price);
+
+                var validator = new ValidationHelper<Contract>();
+
+                if (validator.Validate(_currentContract) == true)
+                    Query<Contract>.Insert(_currentContract);
+                else
+                    MessageBox.Show(validator.Error, "Ошибка валидации");
+            }
         }
     }
 }
