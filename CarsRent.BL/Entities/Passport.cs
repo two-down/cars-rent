@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CarsRent.BL.Validation;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace CarsRent.BL.Entities
@@ -21,8 +22,9 @@ namespace CarsRent.BL.Entities
         public string Number { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Дата выдачи паспорта не введена")]
-        [RegularExpression("^([0]?[1-9]|[1][0-2])[./-]([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0-9]{4}|[0-9]{2})$",
-            ErrorMessage = "Не корректная дата выдачи паспорта")]
+        [Date]
+        //[RegularExpression("^([0]?[1-9]|[1][0-2])[./-]([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0-9]{4}|[0-9]{2})$",
+        //    ErrorMessage = "Не корректная дата выдачи паспорта")]
         public string IssueDate { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Организация, выдавшая паспорт не введена")]

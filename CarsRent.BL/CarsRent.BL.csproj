@@ -74,6 +74,7 @@
     <Compile Include="Settings\GlobalSettings.cs" />
     <Compile Include="Settings\SettingsManager.cs" />
     <Compile Include="Settings\TreeViewConverter.cs" />
+    <Compile Include="Validation\DateAttribute.cs" />
     <Compile Include="Validation\MoneyAttribute.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
     <Compile Include="Word\CreateDocument.cs" />
