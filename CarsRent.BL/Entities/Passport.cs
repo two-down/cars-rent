@@ -33,6 +33,8 @@ namespace CarsRent.BL.Entities
         [Required(AllowEmptyStrings = true, ErrorMessage = "Место регистрации пользователя не введено")]
         public string RegistrationPlace { get; set; }
 
+        public Passport() { }
+
         public Passport (string name, string surname, string patronymic, string series, string number,
                         string issueDate, string issuingOrganization, string registrationPlace)
         {

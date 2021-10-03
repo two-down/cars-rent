@@ -13,7 +13,7 @@ namespace CarsRent.BL.Validation
         {
             var results = new List<ValidationResult>();
             var validationContext = new ValidationContext(item);
-            if (!Validator.TryValidateObject(item, validationContext, results, true))
+            if (Validator.TryValidateObject(item, validationContext, results, true) == false)
             {
                 Error = results.First().ErrorMessage;
                 return false;
