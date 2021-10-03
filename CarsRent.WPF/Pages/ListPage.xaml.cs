@@ -1,20 +1,8 @@
 ﻿using CarsRent.BL.BDRequests;
 using CarsRent.BL.Entities;
 using CarsRent.WPF.UI_Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CarsRent.WPF.Pages
 {
@@ -23,12 +11,18 @@ namespace CarsRent.WPF.Pages
         private ListPageSwitcher _listPageSwitcher;
         private MainWindow _mainWindow;
         private readonly string _objectType;
+        private int _pageNumber;
+        private int _itemsCount;
 
         public ListPage(string objectType, ref MainWindow mainWindow)
         {
             InitializeComponent();
 
+            _pageNumber = 0;
+
             _listPageSwitcher = new ListPageSwitcher(ref spItems, objectType);
+            _itemsCount = _listPageSwitcher.GetItemsCount();
+            
             _objectType = objectType;
 
             _mainWindow = mainWindow;
@@ -36,7 +30,7 @@ namespace CarsRent.WPF.Pages
 
         private void Update()
         {
-            _listPageSwitcher.UpdateList();
+            _listPageSwitcher.UpdateList(_pageNumber);
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -71,6 +65,37 @@ namespace CarsRent.WPF.Pages
         {
             _listPageSwitcher.DeleteSelectedItem();
             Update();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (_pageNumber != 0)
+                ChangePage(_pageNumber - 1);
+        }
+
+        private void btnForward_Click(object sender, RoutedEventArgs e)
+        {
+            if (_pageNumber + 1 * _listPageSwitcher._itemsInPageCount <= _itemsCount)
+                ChangePage(_pageNumber + 1);
+        }
+
+        private void btnGoToPage_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(tbxPageNumber.Text, out var pageNumber) == true)
+            {
+                pageNumber--;
+
+                if (pageNumber > 0)
+                    if (pageNumber < _itemsCount / _listPageSwitcher._itemsInPageCount)
+                        ChangePage(pageNumber);
+            }
+        }
+
+        private void ChangePage(int targetPageNumber)
+        {
+            _pageNumber = targetPageNumber;
+            Update();
+            tbxPageNumber.Text = (_pageNumber + 1).ToString();
         }
     }
 }

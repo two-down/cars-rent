@@ -31,13 +31,25 @@ namespace CarsRent.BL.BDRequests
         public static List<T> SelectAll()
         {
             var context = Context.GetContext();
-            return context.DbSet<T>().ToList();
+            return context.GetDataSet<T>().ToList();
+        }
+
+        public static int Count()
+        {
+            var context = Context.GetContext();
+            return context.GetDataSet<T>().Count();
+        }
+
+        public static List<T> SelectRange(int startPosition, int itemsCount)
+        {
+            var context = Context.GetContext();
+            return context.GetDataSet<T>().OrderBy(x => x.Id).Skip(startPosition).Take(itemsCount).ToList();
         }
 
         public static T SelectById(long id)
         {
             var context = Context.GetContext();
-            return context.DbSet<T>().Where(item => item.Id == id).FirstOrDefault();
+            return context.GetDataSet<T>().Where(item => item.Id == id).FirstOrDefault();
         }
     }
 }

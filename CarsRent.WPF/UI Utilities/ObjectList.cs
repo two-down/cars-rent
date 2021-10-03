@@ -11,20 +11,26 @@ namespace CarsRent.WPF.UI_Utilities
     {
         public List<T> Objects { get; private set; }
         private StackPanel _stackPanel;
+        private int _pageElementsCount;
 
-        public ObjectList(ref StackPanel stackPanel)
+        public ObjectList(ref StackPanel stackPanel, int pageElementsCount)
         {
             _stackPanel = stackPanel;
+            _pageElementsCount = pageElementsCount;
 
-            UpdateList();
-            UpdateList();
+            UpdateList(0);
         }
 
-        public override void UpdateList()
+        public override void UpdateList(int pageNumber)
         {
-            Objects = Query<T>.SelectAll();
+            Objects = Query<T>.SelectRange(pageNumber * _pageElementsCount, _pageElementsCount);
 
             ShowList(Objects);
+        }
+
+        public override int GetItemsCount()
+        {
+            return Query<T>.Count();
         }
 
         public void ShowList(List<T> objects)

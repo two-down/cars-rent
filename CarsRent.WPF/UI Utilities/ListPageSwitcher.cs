@@ -6,33 +6,39 @@ namespace CarsRent.WPF.UI_Utilities
     public class ListPageSwitcher
     {
         private BaseObjectList objectList;
+        public readonly int _itemsInPageCount = 1;
 
         public ListPageSwitcher(ref StackPanel stackPanel, string objectType)
         {
             switch (objectType)
             {
                 case "renters":
-                    objectList = new ObjectList<Renter>(ref stackPanel);
+                    objectList = new ObjectList<Renter>(ref stackPanel, _itemsInPageCount);
                     break;
 
                 case "cars":
-                    objectList = new ObjectList<Car>(ref stackPanel);
+                    objectList = new ObjectList<Car>(ref stackPanel, _itemsInPageCount);
                     break;
 
                 case "contracts":
-                    objectList = new ObjectList<Contract>(ref stackPanel);
+                    objectList = new ObjectList<Contract>(ref stackPanel, _itemsInPageCount);
                     break;
             }
         }
 
-        public void UpdateList()
+        public void UpdateList(int pageNumber)
         {
-            objectList.UpdateList();
+            objectList.UpdateList(pageNumber);
         }
 
         public void DeleteSelectedItem()
         {
             objectList.DeleteSelectedObject();
+        }
+
+        public int GetItemsCount()
+        {
+            return objectList.GetItemsCount();
         }
     }
 }

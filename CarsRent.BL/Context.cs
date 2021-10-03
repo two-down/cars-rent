@@ -1,5 +1,6 @@
 ﻿using CarsRent.BL.Entities;
 using System.Data.Entity;
+using System.Linq;
 
 namespace CarsRent.BL
 {
@@ -22,7 +23,7 @@ namespace CarsRent.BL
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Passport> Passports { get; set; }
 
-        public DbSet<T> DbSet<T>() where T : class
+        public IQueryable<T> GetDataSet<T>() where T : class
         {
             return Set<T>();
         }

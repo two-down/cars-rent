@@ -4,7 +4,8 @@
     {
         public BaseObjectList() { }
 
-        public abstract void UpdateList();
+        public abstract void UpdateList(int pageNumber);
         public abstract void DeleteSelectedObject();
+        public abstract int GetItemsCount();
     }
 }

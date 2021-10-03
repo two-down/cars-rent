@@ -16,7 +16,7 @@ namespace CarsRent.BL.Entities
         public string Color { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Год выпуска машины не введен")]
-        [RegularExpression(@"^(19|20)\d{2}$", ErrorMessage = "Не корректная год выпуска машины")]
+        [RegularExpression(@"^(19|20)\d{2}$", ErrorMessage = "Не корректный год выпуска машины")]
         public string Year { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Серия паспорта машины не введена")]
@@ -46,8 +46,6 @@ namespace CarsRent.BL.Entities
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Дата выдачи паспорта не введена")]
         [Date]
-        //[RegularExpression("^([0]?[1-9]|[1][0-2])[./-]([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0-9]{4}|[0-9]{2})$",
-        //    ErrorMessage = "Не корректная дата выдачи паспорта")]
         public string PassportIssuingDate { get; set; }
 
         public Car() { }
