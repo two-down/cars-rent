@@ -39,7 +39,7 @@ namespace CarsRent.BL.Word
                     Replace: WdReplace.wdReplaceAll); 
             }
 
-            app.ActiveDocument.Save();
+            app.ActiveDocument.SaveAs2(replaceWords["<ПОДПИСЬ АРЕНДАТОРА>"]);
             app.ActiveDocument.Close();
             app.Quit();
         }
