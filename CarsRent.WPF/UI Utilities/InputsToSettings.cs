@@ -76,8 +76,10 @@ namespace CarsRent.WPF.UI_Utilities
             var actPath = inputs[0].ToString();
             var contactPath = inputs[1].ToString();
             var notificationPath = inputs[2].ToString();
+            var outputFolder = inputs[3].ToString();
+            var replaceWords = inputs[4].ToString();
 
-            var settings = new GlobalSettings(actPath, contactPath, notificationPath);
+            var settings = new GlobalSettings(actPath, contactPath, notificationPath, outputFolder, replaceWords);
 
             SettingsManager<GlobalSettings>.Save(settings);
         }

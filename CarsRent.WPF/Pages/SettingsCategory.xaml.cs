@@ -81,17 +81,23 @@ namespace CarsRent.WPF.Pages
             var contract = "";
             var act = "";
             var notification = "";
+            var output = "";
+            var replaceWords = "";
 
             if (settings != null)
             {
                 contract = settings.SampleContractPath;
                 act = settings.SampleActPath;
                 notification = settings.SampleNotificationPath;
+                output = settings.OutputFolder;
+                replaceWords = settings.ReplaceWordsPath;
             }
 
             _constructor.AddTextBox("Путь к образцу договора", contract);
             _constructor.AddTextBox("Путь к образцу акта", act);
             _constructor.AddTextBox("Путь к образцу уведомления", notification);
+            _constructor.AddTextBox("Путь к папке с результатами работы программы", output);
+            _constructor.AddTextBox("Путь к списку слов для замены по шаблону", replaceWords);
         }
 
         private void btnSaveChanges_Click(object sender, RoutedEventArgs e)

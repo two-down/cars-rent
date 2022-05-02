@@ -13,7 +13,6 @@ D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.g.resources
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.Properties.Resources.resources
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.csproj.GenerateResource.cache
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.csproj.CoreCompileInputs.cache
-D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.csproj.CopyComplete
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.exe
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.pdb
 D:\_projects\C#\CarsRent\CarsRent.WPF\bin\Debug\CarsRent.BL.dll.config
@@ -31,3 +30,7 @@ D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\InsertPage.g.cs
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\InsertPage.baml
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\MakeContract.g.cs
 D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\Pages\MakeContract.baml
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.csproj.CopyComplete
+D:\_projects\C#\CarsRent\CarsRent.WPF\obj\Debug\CarsRent.WPF.csproj.SuggestedBindingRedirects.cache
+D:\_projects\C#\CarsRent\CarsRent.WPF\bin\Debug\TemplateDocs.LIB.dll
+D:\_projects\C#\CarsRent\CarsRent.WPF\bin\Debug\TemplateDocs.LIB.pdb

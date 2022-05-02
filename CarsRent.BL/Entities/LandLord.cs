@@ -6,7 +6,7 @@ namespace CarsRent.BL.Entities
     public class LandLord : BaseEntity
     {
         [Required]
-        public Passport Passport { get; set; }
+        public virtual Passport Passport { get; set; }
 
         public LandLord() { }
 

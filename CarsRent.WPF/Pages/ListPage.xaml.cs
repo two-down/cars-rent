@@ -1,5 +1,6 @@
 ﻿using CarsRent.BL.BDRequests;
 using CarsRent.BL.Entities;
+using CarsRent.BL.Word;
 using CarsRent.WPF.UI_Utilities;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,6 +26,9 @@ namespace CarsRent.WPF.Pages
             
             _objectType = objectType;
 
+            if (_objectType == "contracts")
+                btnAdd.Content = "Печать";
+
             _mainWindow = mainWindow;
         }
 
@@ -36,7 +40,14 @@ namespace CarsRent.WPF.Pages
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             if (_objectType == "contracts")
-                _mainWindow.mainFrame.Content = new MakeContract();
+            {
+                var listBox = spItems.Children[0] as ListBox;
+                var selectedItem = listBox.SelectedItem as ListBoxItem;
+
+                var contract = Query<Contract>.SelectById(long.Parse(selectedItem.Tag.ToString()));
+
+                DocumentManager.CreateDocuments(contract);
+            }
             else
                 _mainWindow.mainFrame.Content = new InsertPage(ref _mainWindow, _objectType);
         }

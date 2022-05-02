@@ -72,7 +72,9 @@ namespace CarsRent.BL.Entities
 
         public override string ToString()
         {
-            return $"{Brand} {Model} {Color} паспорт: серия {PassportSeries} № {PassportNumber}";
+            return $"серии {PassportSeries}, № {PassportNumber}, выданного {PassportIssuingDate} " +
+                $"легковой автомобиль марки «{Brand}», {Year} года изготовления, VIN {VIN} " +
+                $"кузов № {BodyNumber}, цвет {Color}";
         }
 
         public override List<string> GetData()

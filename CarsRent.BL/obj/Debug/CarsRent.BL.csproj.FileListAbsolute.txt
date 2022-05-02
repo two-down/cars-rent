@@ -10,7 +10,9 @@ D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\EntityFramework.dll
 D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\EntityFramework.SqlServer.dll
 D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\EntityFramework.xml
 D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\EntityFramework.SqlServer.xml
-D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.CopyComplete
 D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\System.ComponentModel.Annotations.dll
 D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.Migrations.global_model_changes.resources
 D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.GenerateResource.cache
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\TemplateDocs.LIB.dll
+D:\_projects\C#\CarsRent\CarsRent.BL\bin\Debug\TemplateDocs.LIB.pdb
+D:\_projects\C#\CarsRent\CarsRent.BL\obj\Debug\CarsRent.BL.csproj.CopyComplete

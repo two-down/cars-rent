@@ -17,13 +17,11 @@ namespace CarsRent.BL.Entities
         public virtual Car Car { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Дата заключения договора не введена")]
-        [RegularExpression("^([0]?[1-9]|[1][0-2])[./-]([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0-9]{4}|[0-9]{2})$",
-            ErrorMessage = "Не корректная дата заключения договора")]
+        [Date]
         public string ConclusionDate { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Дата окончания действия договора не введена")]
-        [RegularExpression("^([0]?[1-9]|[1][0-2])[./-]([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0-9]{4}|[0-9]{2})$",
-            ErrorMessage = "Не корректная дата окончания договора")]
+        [Date]
         public string EndDate { get; set; }
 
         [Required(ErrorMessage = "Не выбран тип поездки")]

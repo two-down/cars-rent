@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31424.327
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsRent.BL", "CarsRent.BL\CarsRent.BL.csproj", "{77E38C5F-7BB0-4630-B6CE-9630EF1AC88B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsRent.WPF", "CarsRent.WPF\CarsRent.WPF.csproj", "{FF2C2409-5630-428C-B2C5-2F5A1A10B1AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsRentTests", "CarsRentTests\CarsRentTests.csproj", "{148BBE32-E75D-4868-BDCB-C7DF5194CE32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateDocs.LIB", "..\TemplateDocs\TemplateDocs.LIB\TemplateDocs.LIB.csproj", "{EE7B555C-E1CF-4BD4-B48D-5C40781ED274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{148BBE32-E75D-4868-BDCB-C7DF5194CE32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{148BBE32-E75D-4868-BDCB-C7DF5194CE32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{148BBE32-E75D-4868-BDCB-C7DF5194CE32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE7B555C-E1CF-4BD4-B48D-5C40781ED274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE7B555C-E1CF-4BD4-B48D-5C40781ED274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE7B555C-E1CF-4BD4-B48D-5C40781ED274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE7B555C-E1CF-4BD4-B48D-5C40781ED274}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

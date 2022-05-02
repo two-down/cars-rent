@@ -30,7 +30,7 @@ namespace CarsRent.WPF.Pages
                 _renters.Add(renter.ToString(), renter.Id);
 
             foreach (var car in Query<Car>.SelectAll())
-                _cars.Add(car.ToString(), car.Id);
+                _cars.Add($"{car.Brand} {car.Color}", car.Id);
 
             cbRenter.ItemsSource = _renters.Keys;
             cbCar.ItemsSource = _cars.Keys;
